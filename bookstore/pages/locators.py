@@ -14,4 +14,5 @@ class ProductPageLocators():
 
 class MessagesAfterAdding():
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.alert-success")
-    BASKET_TOTAL_ALERT = (By.CSS_SELECTOR, "div.alert-info")
+    PRODUCT_NAME_IN_SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.alert-success div.alertinner > strong")
+    BASKET_TOTAL_ALERT = (By.CSS_SELECTOR, "div.alert-info div.alertinner > p strong")

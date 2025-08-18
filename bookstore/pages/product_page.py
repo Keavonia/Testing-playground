@@ -9,7 +9,7 @@ class ProductPage(BasePage):
 
     def should_be_product_name_in_success_message(self):
         product_name_text = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        success_message_text = self.browser.find_element(*MessagesAfterAdding.SUCCESS_MESSAGE).text
+        success_message_text = self.browser.find_element(*MessagesAfterAdding.PRODUCT_NAME_IN_SUCCESS_MESSAGE).text
         assert product_name_text == success_message_text, \
             f"Product name in message should be '{product_name_text}', but got '{success_message_text}'"
 
