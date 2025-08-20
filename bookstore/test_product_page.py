@@ -18,7 +18,7 @@ from .pages.basket_page import BasketPage
 def test_guest_can_add_product_to_basket(browser, link):
    page = ProductPage(browser, link)
    page.open()
-   page.add_product_to_basket()
+   page.add_product_to_basket_quiz()
    page.should_be_product_name_in_success_message()
    page.should_be_product_price_in_success_message()
 
