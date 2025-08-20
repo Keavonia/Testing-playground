@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators, MessagesAfterAdding
+from .locators import BasePageLocators
 
 
 class ProductPage(BasePage):
@@ -23,3 +24,6 @@ class ProductPage(BasePage):
     def should_not_be_success_message(self):
         assert not self.is_element_present(*MessagesAfterAdding.SUCCESS_MESSAGE), \
             "Success message should not be present, but it is"
+
+    def go_to_basket_page(self):
+        self.browser.find_element(*BasePageLocators.BASKET_BUTTON).click()
