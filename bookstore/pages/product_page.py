@@ -8,6 +8,9 @@ class ProductPage(BasePage):
         self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
         self.solve_quiz_and_get_code()
 
+    def add_product_to_basket(self):
+        self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
+
     def should_be_product_name_in_success_message(self):
         product_name_text = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         success_message_text = self.browser.find_element(*MessagesAfterAdding.PRODUCT_NAME_IN_SUCCESS_MESSAGE).text
