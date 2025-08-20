@@ -21,3 +21,9 @@ class MessagesAfterAdding():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link")
+    BASKET_BUTTON = (By.CSS_SELECTOR, "span.btn-group > a.btn")
+
+
+class BasketPageLocators():
+    BASKET_FORMSET = (By.CSS_SELECTOR, "div.basket-items > div.row")
+    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner > p")
