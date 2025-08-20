@@ -3,7 +3,12 @@ from selenium.webdriver.common.by import By
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
+
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+    REGISTER_EMAIL = (By.CSS_SELECTOR, "[name=registration-email]")
+    REGISTER_PASSWORD1 = (By.CSS_SELECTOR, "[name=registration-password1]")
+    REGISTER_PASSWORD2 = (By.CSS_SELECTOR, "[name=registration-password2]")
+    REGISTER_BUTTON = (By.CSS_SELECTOR, "button[name=registration_submit]")
 
 
 class ProductPageLocators():
@@ -27,3 +32,4 @@ class BasePageLocators():
 class BasketPageLocators():
     BASKET_FORMSET = (By.CSS_SELECTOR, "div.basket-items > div.row")
     EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner > p")
+
