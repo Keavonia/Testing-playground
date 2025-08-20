@@ -25,8 +25,8 @@ class ProductPage(BasePage):
             f"Product price should be '{product_price}', but basket shows '{basket_total_price}'"
 
     def should_not_be_success_message(self):
-        assert not self.is_element_present(*MessagesAfterAdding.SUCCESS_MESSAGE), \
-            "Success message should not be present, but it is"
+        assert self.is_not_element_present(*MessagesAfterAdding.SUCCESS_MESSAGE), \
+            "Success message should not be present, but it is."
 
     def go_to_basket_page(self):
         self.browser.find_element(*BasePageLocators.BASKET_BUTTON).click()
