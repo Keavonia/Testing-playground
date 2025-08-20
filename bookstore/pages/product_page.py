@@ -4,7 +4,7 @@ from .locators import BasePageLocators
 
 
 class ProductPage(BasePage):
-    def add_product_to_basket(self):
+    def add_product_to_basket_quiz(self):
         self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
         self.solve_quiz_and_get_code()
 
