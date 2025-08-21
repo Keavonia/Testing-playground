@@ -1,4 +1,5 @@
 import pytest
+from .pages.login_page import LoginPage
 from .pages.product_page import ProductPage
 from .pages.basket_page import BasketPage
 
@@ -55,16 +56,18 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
 
 class TestUserAddToBasketFromProductPage():
 
-    link = ''
-
-    def test_user_can_add_product_to_basket(browser, link):
+    def test_user_can_add_product_to_basket(browser, setup):
+        browser = setup
+        link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
         page = ProductPage(browser, link)
         page.open()
         page.add_product_to_basket()
         page.should_be_product_name_in_success_message()
         page.should_be_product_price_in_success_message()
 
-    def test_user_cant_see_success_message_after_adding_product_to_basket(browser, link):
+    def test_user_cant_see_success_message_after_adding_product_to_basket(browser, setup):
+        browser = setup
+        link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
         page = ProductPage(browser, link)
         page.open()
         page.add_product_to_basket()
