@@ -2,6 +2,8 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from .pages.login_page import LoginPage
+import time
 
 
 def pytest_addoption(parser):
@@ -32,3 +34,20 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit()
+
+@pytest.fixture(autouse=True, scope="function")
+def setup(browser):
+    link = 'https://selenium1py.pythonanywhere.com/en-gb/accounts/login/'
+    page = LoginPage(browser, link)
+    page.open()
+
+    email = f'testuser{int(time.time())}@example.com'
+    password = "qscrgnyjq"
+
+    page.register_new_user(email, password)
+
+    page.should_be_authorized_user()
+
+    print(f'User registered and logged in: {email}')
+
+    return browser
