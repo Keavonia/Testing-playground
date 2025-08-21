@@ -35,7 +35,7 @@ def browser(request):
     print("\nquit browser..")
     browser.quit()
 
-@pytest.fixture(autouse=True, scope="function")
+@pytest.fixture(scope="function")
 def setup(browser):
     link = 'https://selenium1py.pythonanywhere.com/en-gb/accounts/login/'
     page = LoginPage(browser, link)
