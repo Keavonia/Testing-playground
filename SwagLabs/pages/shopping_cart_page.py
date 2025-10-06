@@ -1,5 +1,6 @@
-from .locators import ShoppingCartLocators, MainPageLocators
+from .locators import ShoppingCartLocators, ProductCardLocators, ShoppingCartItemLocators
 from .base_page import BasePage
+from selenium.common import NoSuchElementException
 
 
 class ShoppingCartPage(BasePage):
@@ -16,3 +17,8 @@ class ShoppingCartPage(BasePage):
     def should_be_item_in_cart(self):
         assert self.is_element_present(*ShoppingCartLocators.ITEM_IN_CART), \
             "The product should be in the cart, but it's not there."
+
+    
+
+
+

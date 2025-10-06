@@ -60,13 +60,17 @@ class ProductCardLocators():
 
 
 class ShoppingCartLocators():
-    MISSING_ITEM_IN_CART = (By.CSS_SELECTOR, "div.removed_cart_item")
     ITEM_IN_CART = (By.CSS_SELECTOR, "div.cart_item")
 
     CART_QUANTITY = (By.CSS_SELECTOR, "div.cart_quantity")
 
     BUTTON_CONTINUE_SHOPPING = (By.CSS_SELECTOR, "button.btn.btn_secondary.btn_medium.back")
     BUTTON_CHECKOUT = (By.CSS_SELECTOR, "button.btn.btn_action.btn_medium.checkout_button")
+
+
+class ShoppingCartItemLocators():
+    PRODUCT_ITEM_NAME = (By.CSS_SELECTOR, "div.cart_item_label div.inventory_item_name")
+
 
 
 class CheckoutYourInformationPageLocators():
